@@ -25,7 +25,7 @@ import java.util.Properties;
 
 @EnableJpaRepositories("web")
 
-//@ComponentScan(value = "web")
+@ComponentScan(value = "web")
 
 public class HibernateConfig {
     private static final String PROP_DATABASE_DRIVER = "db.driver";
@@ -36,7 +36,7 @@ public class HibernateConfig {
     private static final String PROP_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
     private static final String PROP_HIBERNATE_FORMAT_SQL = "hibernate.format_sql";
     private static final String PROP_ENTITYMANAGER_PACKAGES_TO_SCAN = "entitymanager.packages.to.scan";
-    private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.update";
+    private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.crate";
     //private static final String PROP_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.update";
 
     private Environment env;

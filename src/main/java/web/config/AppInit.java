@@ -13,6 +13,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     protected Class<?>[] getRootConfigClasses() {
 
         return null;
+//        return new Class[]{HibernateConfig.class};
     }
 
 

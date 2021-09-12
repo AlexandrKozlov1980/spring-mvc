@@ -25,7 +25,7 @@ public class UserRepositoryImp implements UserRepository {
     }
 
     @Override
-    public void deleteUser(Integer id) {
+    public void deleteUser(Long id) {
         getEntityManager()
                 .createQuery("delete from User where id=: id")
                 .setParameter("id", id)
@@ -38,7 +38,7 @@ public class UserRepositoryImp implements UserRepository {
     }
 
     @Override
-    public User getUserById(Integer id) {
+    public User getUserById(Long id) {
         return getEntityManager().find(User.class, id);
     }
 
