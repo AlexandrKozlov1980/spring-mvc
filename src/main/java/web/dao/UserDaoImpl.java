@@ -1,8 +1,11 @@
 package web.dao;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import web.model.User;
 
+import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +15,8 @@ public class UserDaoImpl implements UserDao{
     private static int PEOPLE_COUNT;
     private List<User> users;
 
-//    @Autowired
-//    private SessionFactory sessionFactory;
+//  @Autowired
+//   private SessionFactory sessionFactory;
 
     //For List version
 
