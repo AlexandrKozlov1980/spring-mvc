@@ -1,5 +1,6 @@
 package web.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +14,21 @@ import java.util.List;
 @RequestMapping("/")
 public class MainController {
 
-    private final UserService userService;
-    private List<User> users = new ArrayList<>();
+    private UserService userService;
 
-    public MainController(UserService userService) {
+    @Autowired
+    public void setUserService(UserService userService) {
         this.userService = userService;
     }
+
+
+//    @Autowired
+//    private UserService userService;
+    private List<User> users = new ArrayList<>();
+
+    //public MainController(UserService userService) {
+        //this.userService = userService;
+    //}
 
     @GetMapping()
     public String getMain(Model model){
@@ -53,7 +63,7 @@ public class MainController {
 
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("user") User user, @PathVariable("id") Integer id){
-        userService.updateUser(id, user);
+        userService.updateUser(user);
         return "redirect:/";
 
     }
